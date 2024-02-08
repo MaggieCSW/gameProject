@@ -9,29 +9,92 @@
 </head>
 <body>
     <header>
-        <h1 class="h1-header text-capitalize text-center">do you know our presidents?</h1>
-        <!-- change title => ARE YOU SMARTER THAN A 6th GRADER -->
-        <p class="intro-p text-capitalize text-center">how well do you really know the presidents? in this game you will put your skills to the test and you may even learn something new!</p>
-        <!-- Explain the rules -->
-        <!-- have catagories => history, math, science -->
-    </header>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <!-- style button -->
-                    <a href="game.html"><button type="button" class="play-btn btn btn-primary btn-lg text-uppercase">click here to play</button></a>
-                </div>
-                <div class="col-sm-6">
-                    <!-- style button -->
-                    <a href="game.html"><button type="button" class="score-btn btn btn-primary btn-lg text-uppercase">view high scores</button></a>
+        <section id="section1">
+            <div class="container header-container">
+                <div class="row header-row">
+                    <div class="col-12"> 
+                        <h1 class="h1-header text-capitalize text-center" id="heading">do you know our presidents?</h1>
+                        <!-- change title => ARE YOU SMARTER THAN A 6th GRADER -->
+                        <p class="intro-p text-capitalize text-center">how well do you really know the presidents? in this game you will put your skills to the test and you may even learn something new!</p>
+                        <!-- Explain the rules -->
+                        <!-- have catagories => history, math, science -->
+                    </div>        
                 </div>
             </div>
-        </div>
-
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- style button -->
+                        <button type="button" class="play-btn btn btn-primary btn-lg text-uppercase" id="playBtn">click here to play</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- style button -->
+                        <a href="game.html"><button type="button" class="score-btn btn btn-primary btn-lg text-uppercase" id="scoreBtn">view high scores</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="section question-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- should this be an h2 since the question will be on the same page as index.html??? -->
+                        <h2 class="text-center text-uppercase" id="question">what is the answer to this question?</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="answer-box card">
+                            <p class="letter-choice">a</p>
+                            <p class="text-capitalize answer-text" id="answerAText">a is the answer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="answer-box card">
+                            <p class="letter-choice">b</p>
+                            <p class="answer-text" id="answerBText">b is the answer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="answer-box card">
+                            <p class="letter-choice">c</p>
+                            <p class="answer-text" id="answerCText">c is the answer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="answer-box card">
+                            <p class="letter-choice">d</p>
+                            <p class="answer-text" id="answerDText">d is the answer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <!-- style button -->
+                        <button type="button" class="next-btn text text-capitalize" id="nextBtn">next</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </footer>
 
 

@@ -8,30 +8,48 @@ body {
     /* change font */
 }
 
-.play-btn {
-    
+/* style buttons */
+
+.question-section {
+    margin-top: 45px;
+    margin-bottom: 25px;
 }
 
-#question-box {
+#question {
+    display
+    /* text-align: center; */
     margin-bottom: 40px;
 }
 
 .answer-box {
     display: flex;
     flex-direction: initial;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
     /* change font-size */
     /* padding: 10px 20px; */
 }
 
+.answer-box:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px grey;
+}
+
 .letter-choice {
+    font-size: 30px;
+    text-align: center;
     background-color: red;
     color: white;
     padding: 5px 10px;
     margin: 0;
+    width: 40px;
 }
 
 .answer-text {
     padding: 5px 10px;
 }
+
+
+
+
 
