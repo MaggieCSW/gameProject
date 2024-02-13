@@ -89,3 +89,35 @@ playBtn.addEventListener('click', ()=> {
     startGame();
 });
 
+
+playBtn.addEventListener('click', ()=> {
+    section1.classList.add('d-none')
+    section2.classList.remove('d-none')
+    section3.classList.remove('d-none')
+});
+
+
+
+const theQuestion = document.getElementById('theQuestion');
+
+
+
+const questionIds = []
+
+gameQuestions.forEach((question) => {
+    questionIds.push(question.id)
+})
+questionIds.sort(() => Math.random() - 0.5)
+console.log(questionIds);
+
+
+
+
+for (let i = 0; i <questionIds.length; i++) {
+    gameQuestions.forEach((item) => {
+        if(item.id == questionIds[i]) {
+            console.log(item.question)
+        }
+    })
+}
+
