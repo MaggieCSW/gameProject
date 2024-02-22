@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>GAME PROJECT</title>
 </head>
 <body>
@@ -13,11 +13,9 @@
             <div class="container header-container">
                 <div class="row header-row">
                     <div class="col-12"> 
-                        <h1 class="h1-header text-capitalize text-center" id="heading">do you know our presidents?</h1>
-                        <!-- change title => ARE YOU SMARTER THAN A 6th GRADER -->
-                        <p class="intro-p text-capitalize text-center">how well do you really know the presidents? in this game you will put your skills to the test and you may even learn something new!</p>
+                        <h1 class="h1-header text-capitalize text-center" id="heading">what in the war?</h1>
+                        <p class="intro-p text-capitalize text-center">In this game you will put your skills to the test and you may even learn something new!</p>
                         <!-- Explain the rules -->
-                        <!-- have catagories => history, math, science -->
                     </div>        
                 </div>
             </div>
@@ -30,36 +28,35 @@
                     </div>
                     <div class="col-sm-6">
                         <!-- style button -->
-                        <a href="game.html"><button type="button" class="score-btn btn btn-primary btn-lg text-uppercase" id="scoreBtn">view high scores</button></a>
+                        <button type="button" class="score-btn btn btn-primary btn-lg text-uppercase" id="scoreBtn">view high scores</button>
                     </div>
                 </div>
             </div>
         </section>
     </header>
     <main>
-        <section class="section question-section">
+        <section class="section question-section d-none" id="section2">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <!-- should this be an h2 since the question will be on the same page as index.html??? -->
-                        <h2 class="text-center text-uppercase" id="question">what is the answer to this question?</h2>
+                        <h2 class="text-center text-uppercase" id="theQuestion">what is the answer to this question?</h2>
                     </div>
                 </div>
             </div>
-        </section>
-        <section>
+        
             <div class="container">
+                <div class="text-display"></div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="answer-box card">
+                        <div class="answer-box card" id="answerBoxA">
                             <p class="letter-choice">a</p>
-                            <p class="text-capitalize answer-text" id="answerAText">a is the answer</p>
+                            <p class="answer-text" id="answerAText">a is the answer</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="answer-box card">
+                        <div class="answer-box card" id="answerBoxB">
                             <p class="letter-choice">b</p>
                             <p class="answer-text" id="answerBText">b is the answer</p>
                         </div>
@@ -67,7 +64,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="answer-box card">
+                        <div class="answer-box card" id="answerBoxC">
                             <p class="letter-choice">c</p>
                             <p class="answer-text" id="answerCText">c is the answer</p>
                         </div>
@@ -75,7 +72,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="answer-box card">
+                        <div class="answer-box card" id="answerBoxD">
                             <p class="letter-choice">d</p>
                             <p class="answer-text" id="answerDText">d is the answer</p>
                         </div>
@@ -85,7 +82,7 @@
         </section>
     </main>
     <footer>
-        <section>
+        <section class="section section-3 d-none" id="section3">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -98,7 +95,7 @@
     </footer>
 
 
-    <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
