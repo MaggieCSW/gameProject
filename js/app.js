@@ -49,9 +49,18 @@ class Game {
             
         ];
 
+        // 'this' references the object that is executing the current function
+
+        // Index
+
         this.idx = 0
 
         this.theQuestion = document.getElementById('theQuestion')
+
+        // allows me to set different questions and answers to different values and to have different correct answers
+
+        // set all to empty string
+        // the inital value
         this.question = ''
         this.answerA = ''
         this.answerB = ''
@@ -59,6 +68,8 @@ class Game {
         this.answerD = ''
         this.correctAnswer = ''  
 
+
+        //grab elements
         this.playBtn = document.getElementById('playBtn')
         this.nextBtn = document.getElementById('nextBtn')
 
@@ -69,19 +80,27 @@ class Game {
         this.answerText = document.querySelectorAll('.answer-text')
 
         this.answerBox = document.querySelectorAll('.answer-box')
+
+        
     }
     
-    
+    // initializer... using to initialize functions
+
     init() {
         this.getData()
     }
     
+    // start the game, start button disappears and questions appear
+
     startGame() {
         document.getElementById('section1').classList.add('d-none')
         document.getElementById('section2').classList.remove('d-none')
         document.getElementById('section3').classList.remove('d-none')
     }
     
+
+    // passing in data and for each answer it's either correct or incorrect 
+
     nextQuestion() {
         this.getData()
 
@@ -92,6 +111,9 @@ class Game {
 
 
     }
+
+    // randomizes questions
+
     getData() {
         let idx = Math.floor(Math.random() * this.gameQuestions.length)
         
@@ -100,7 +122,14 @@ class Game {
         // console.log(data)
         this.displayData(data)
     }
+
     
+
+    // pulling all the data from the contructor and passing it into the empty strings
+
+    // display argument
+    // grabs the questions from obejects in the constructor with its matching set of answers 
+    //changes the data "functional"
     displayData(data) {
         this.question = data.question
         this.answerA = data.a
@@ -110,15 +139,15 @@ class Game {
         this.correctAnswer = data.answer
 
 
-
-        
+        // displays/changes the text
+        //innertext displays  "visual"
         this.theQuestion.innerText = this.question
         this.answerAText.innerText = this.answerA
         this.answerBText.innerText = this.answerB
         this.answerCText.innerText = this.answerC
         this.answerDText.innerText = this.answerD
 
-        
+        // event listener lets you click the correct answer
         this.answerText.forEach(answer => {
             answer.addEventListener('click', ()=> {
                 this.selectAnswer(answer, this.correctAnswer)
@@ -129,11 +158,13 @@ class Game {
         
     }
 
+        
+    // check for whether you got the answer right or wrong
     selectAnswer(answer, correctAnswer) {
         console.log(answer.innerText, correctAnswer)
 
         let isCorrect
-
+        // is the inner text the same as the correct answer 
         if (answer.innerText == correctAnswer) {
             isCorrect = true
         } else {
@@ -148,8 +179,8 @@ class Game {
 
     }
 
-    
-
+    // answer turns green if correct, answer turns red if incorrect
+    // turns it green or red
     validateAnswer(result, ans) {
         console.log(result, ans)
 
@@ -164,163 +195,38 @@ class Game {
     
 }
 
-
-// ************************************************************** 
-        // if(this.answerBox == isCorrect) {
-        //     classList.add('correct')
-        // } else {
-        //     classList.add('incorrect')
-        // }
-        // return('correct')
-// ******************************************************
-        // if (selection == this.answerBox) {
-        //     this.correct.classList.add('d-none')
-        // } else {
-        //     this.correct.classList.remove('d-none')
-        // }
-
-
-        // div is called answerBox
-    
-    
-
-    // selection == this.answerbox
-
-
-
-// Next.... let the correct answer light up green
-// If incorrect answer is selected, let answer selection change to red and the correct answer change to green
-
-
-// Then... click next button and have the next question appear
-
-
-
-
-
-
-
-
-
-// for next  button you will need to remove the question and data associated w/question.. get rid of quest and add another one
-// className
-
-
-
-// when answer that is selected is correct, change the color of the div to green
-
-// when answer that is selected is incorrect, change color of the div to red
-
-// div is called answer-box (we named it this.answerBox in javascript)
-
-
-
-
-
-
-
-
-
-// ************************** ADDED BELOW ON THURSDAY ********************************************************************
-
-
-// const nextBtn = document.getElementById('nextBtn')
-
-// nextBtn.addEventListener('click', ()=> (this.quest
-
-// const selectAnswer =()=> {
-//     let selectedAnswer
-//     const answerText = document.querySelectorAll('.answer-text')
-//     // console.log(answerText)
-
-//     answerText.forEach(answer => {
-//         answer.addEventListener('click', ()=> {
-//             selectedAnswer = answer.innerText
-//             console.log(selectedAnswer)
-//         })
-//     })
-
-// }
-
-// selectAnswer()
-
-// function correct() {
-    
-// }
-
-
-
-// *************************************************************************************************************************
-
-
-
-
-
-
-
-
-
-// ************************** Trying with radio buttons in html  ***************************************
-// function collectUserAnswers() {
-//     const answerText = [];
-
-//     // Assuming radio buttons are used for single-choice questions
-//     const radioButtons = document.querySelectorAll('input[type="radio"]:checked');
-    
-//     radioButtons.forEach((radioButton) => {
-//     answerText.push(radioButton.value);
-//     });
-
-//     return answerText;
-// }
-
-// function checkAnswers() {
-//     const userAnswers = collectUserAnswers();
-//     let score = 0;
-  
-//     userAnswers.forEach((userAnswer, index) => {
-//       if (userAnswer === quizData[index].correctAnswer) {
-//         score++;
-//       }
-//     });
-  
-//     alert(`You scored ${score} out of ${quizData.length}!`);
-//   }
-
-// *****************************************************************************************
-
-    // shuffle orders
-
-    // ***************** commented out below
-    // shuffle() {
-
-    // }
-
-    // method for getting right answer
-
-    // ************** commented out below
-    // correct() {
-    //     this.correctAnswer = this.gameQuestions.answer
-    // }
-
-    
-    //  ***************************************************
-
-//  SELECT AN ANSWER.....
-
-
-    // ****************************************************
-    
+// restarts when refreshed
+// first event list restarts the game 
+// second event list goes to next question   
 
 const triviaGame = new Game() 
 
-// triviaGame.init()
-
 triviaGame.playBtn.addEventListener('click', ()=> {
     triviaGame.startGame()
-    triviaGame.init()
+    triviaGame.init() 
 })
 
 triviaGame.nextBtn.addEventListener('click', ()=> {
     triviaGame.nextQuestion()
 })
+
+
+
+
+
+
+// *************************************************************************************************
+
+// ADD TO GAME:
+// shuffle orders 
+// next  button... remove the question and data associated w/question.. get rid of quest and add another one
+
+// **************************************************************************************************
+
+// when looped through all 5 questions, display 'end game'
+// calculate how many out of 5 that the player got correct
+// display scores on 'view scores'
+
+// **************************************************************************************************
+
+// create form so player can enter their name and name and score will be displayed in "view scores"
