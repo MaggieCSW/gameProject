@@ -127,7 +127,6 @@ class Game {
 
     // pulling all the data from the contructor and passing it into the empty strings
 
-    // display argument
     // grabs the questions from obejects in the constructor with its matching set of answers 
     //changes the data "functional"
     displayData(data) {
@@ -139,7 +138,7 @@ class Game {
         this.correctAnswer = data.answer
 
 
-        // displays/changes the text
+        // displays the data that was pulled/changes the text
         //innertext displays  "visual"
         this.theQuestion.innerText = this.question
         this.answerAText.innerText = this.answerA
@@ -196,8 +195,8 @@ class Game {
 }
 
 // restarts when refreshed
-// first event list restarts the game 
-// second event list goes to next question   
+// first event listener restarts the game 
+// second event listener goes to next question   
 
 const triviaGame = new Game() 
 
